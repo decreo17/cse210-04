@@ -1,3 +1,4 @@
+from fileinput import filename
 from gc import collect
 import os
 import random
@@ -57,7 +58,8 @@ def main():
     for obj in range(DEFAULT_FALLING_OBJECTS):
         n = obj % 2
         if(n == 0):
-            text = "*"
+            text = filename
+            filename = arcade.Sprite("gem.png")
         
         if(n != 0):
             text = "O"
