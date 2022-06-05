@@ -2,6 +2,7 @@ from fileinput import filename
 from gc import collect
 import os
 import random
+import pygame
 
 from game.casting.game_object import GameObject
 from game.casting.collection import Collection
@@ -57,7 +58,7 @@ def main():
     for obj in range(DEFAULT_FALLING_OBJECTS):
         n = obj % 2
         if(n == 0):
-            text = "m"
+            text = pygame.image.load('gem(1).png')
         
         if(n != 0):
             text = "O"
@@ -82,7 +83,7 @@ def main():
         if (text == "O"):
             falling_object.set_points(-1)
         
-        if (text =="*"):
+        if (text ==pygame.image.load('gem(1).png')):
             falling_object.set_points(2)
 
         collection.add_game_object("falling_objects", falling_object)
