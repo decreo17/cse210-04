@@ -58,7 +58,7 @@ def main():
     for obj in range(DEFAULT_FALLING_OBJECTS):
         n = obj % 2
         if(n == 0):
-            text = "_"
+            text = "m"
         
         if(n != 0):
             text = "O"
