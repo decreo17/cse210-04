@@ -2,7 +2,6 @@ from fileinput import filename
 from gc import collect
 import os
 import random
-import arcade
 
 from game.casting.game_object import GameObject
 from game.casting.collection import Collection
