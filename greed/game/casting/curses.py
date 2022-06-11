@@ -6,6 +6,8 @@ class Curses(PowerUp):
     """
     Decrease the points in some factor
     """
+    def __init__(self):
+        super().__init__()
     
     def bad_mult(self): 
         mult = super().multiplier()

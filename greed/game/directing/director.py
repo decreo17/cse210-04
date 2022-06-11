@@ -5,8 +5,6 @@ from game.casting.randomizer import Randomizer
 from game.casting.falling_object import FallingObject
 import random
 
-import time
-
 class Director:
     """A person who directs the game. 
     
@@ -33,7 +31,7 @@ class Director:
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service
-        self._floor = 585
+        self._floor = 580
         self._collection = collection
         self._points = 0
         self._power_up = power_up
@@ -43,8 +41,6 @@ class Director:
         #self._amp = 0
         
         self._falling_object = FallingObject()
-        
-        
         
     def start_game(self):
         """Starts the game using the given collection. Runs the main game loop.
@@ -87,25 +83,23 @@ class Director:
         for falling_object in falling_objects:
             if player.distance(falling_object.get_position()) < 20: #collision detection
                 #this is if the player gets a multiplier power up
-                if falling_object.get_text() == "mult":
+                if falling_object.get_text() == "m":
                     #print('you got a mult, points before multttttttttttttttttttttttttttttttttttttt',self._points)
                     #mult = (self._points * self._power_up.multiplier())#falling_object.get_points()) 
                     self._points *= (falling_object.get_points() + self._power_up.multiplier()) 
                     #print('points after mult',self._points)
-                    collection.remove_game_object("falling_objects", falling_object)
+                    #collection.remove_game_object("falling_objects", falling_object)
                     
                 #if player gets a curse    
-                elif falling_object.get_text() == 'cur':
+                elif falling_object.get_text() == 'c':
                     #print('points before curseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',self._points)
                     curse = (self._points *  self._curses.bad_mult()) 
                     self._points += curse
                     #print('points after curse',self._points)
-                    collection.remove_game_object('falling_objects', falling_object)
-                 
-                 
-                 
+                    #collection.remove_game_object('falling_objects', falling_object)
+  
                 #if player gets a randomizer item    
-                elif falling_object.get_text() == 'ran':
+                elif falling_object.get_text() == 'r':
                     #print('points before randomizerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr',self._points)
                     result = mystery.mystery_box()
                     print('this is the outcome of the mystery box', result)
@@ -115,14 +109,14 @@ class Director:
                         print('points before flat mystery box',self._points)
                         self._points += result
                         print('points after randomizer',self._points)
-                        collection.remove_game_object('falling_objects', falling_object)
+                        #collection.remove_game_object('falling_objects', falling_object)
                     
                     elif result > 0 and result <= 2: #if mystery box give a positive multiplier
                         print('this is a randomizer multiplier',result)
                         print('points before good mystery box',self._points)
                         self._points += (self._points * result)
                         print('points after good mystery box',self._points)
-                        collection.remove_game_object('falling_objects', falling_object)
+                        #collection.remove_game_object('falling_objects', falling_object)
                         
                     elif result < 0:
                         print('this is a negative multiplier from mystery box')
@@ -131,29 +125,25 @@ class Director:
                         # ran = (self._points * self._randomizer.mystery_box())
                         #   self._points += ran
                         print('points after randomizer',self._points)
-                        collection.remove_game_object('falling_objects', falling_object)
+                        #collection.remove_game_object('falling_objects', falling_object)
                 
                 # can add future power ups here
-                    
-                
+
                 #if player gets a rock
-                elif falling_object.get_text() == 'ro':
+                elif falling_object.get_text() == 'O':
                     # print('you hit a rock')
                     # print('points before rock', self._points)
                     self._points += falling_object.get_points()
                     #print('points after rock', self._points)
-                    collection.remove_game_object('falling_objects', falling_object)
+                    #collection.remove_game_object('falling_objects', falling_object)
                     
                 # if not a power up, curse, or rock it is a gem
                 else:
                     #print('you got a gemmmmmmmmmmmmm your old points',self._points)
                     self._points += falling_object.get_points()
                     #print('your points are nowwwwwwwwwwwwww',self._points)
-                    collection.remove_game_object('falling_objects', falling_object)
-                   
-            
-            
-                    
+                    #collection.remove_game_object('falling_objects', falling_object)
+
         #falling objects
         for falling_object in falling_objects: 
             velocity = Point(0,(random.randint(8,15)))# + self._amp )) # this will make the gems and rocks fall faster.  If the number is below zero it will go in reverse
@@ -161,12 +151,12 @@ class Director:
             falling_object.move_next(max_x, max_y)
             
             
-        # going through all the falling objects and if falling_object falls past 580...
+        # going through all the falling objects and if falling_object falls past floor...
         # then it will get renamed, its value reset, starting position x coordinate randomized and y coordinate starting at the top of the screen.  
         # After that it is again put into the list of falling objects
         for falling_object in falling_objects:
             #print(falling_object.get_position().get_y()) #this will get the y point debugging line
-            if falling_object.get_position().get_y() > 580:
+            if falling_object.get_position().get_y() > self._floor:
                 #print('y is greater than the floor') # debugging
                 #print('old name for the object is.............', falling_object.get_text())
                 falling_object.set_text(rename.renamer())
@@ -182,11 +172,6 @@ class Director:
                 collection.add_game_object('falling_objects', falling_object)
                 #print('the new name for the object is.........',falling_object.get_text()) #debugging 
         
-        
-            
-        
-                
-            
         # if self._points >= 10:
         #     banner.set_text("You Win")
 
