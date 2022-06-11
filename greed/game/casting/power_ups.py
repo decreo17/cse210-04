@@ -1,5 +1,8 @@
 import random
 class Power_up:
+    """
+    Gives some extra incrrease to the points.
+    """
     
     # def __init__(self):
     #      #self._speed = 0

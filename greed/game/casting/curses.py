@@ -3,6 +3,9 @@ from game.casting.power_ups import Power_up
 
 
 class Curses(Power_up):
+    """
+    Decrease the points in some factor
+    """
     
     def bad_mult(self): 
         mult = super().multiplier()

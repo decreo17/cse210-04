@@ -24,10 +24,12 @@ class Director:
             keyboard_service (KeyboardService): An instance of KeyboardService.
             video_service (VideoService): An instance of VideoService.
             collection (collection): The collection of actors.
+            power_up (PowerUp): the increasing value
         
         Attributes:
-            floor(int): This is the floor where the player stands and the falling objects should be gone when touch
-            points: This is the current points of the player
+            _floor(int): This is the floor where the player stands and the falling objects should be gone when touch
+            _points: This is the current points of the player
+            _curses (Curses): decreasing value to points
         """
         self._keyboard_service = keyboard_service
         self._video_service = video_service

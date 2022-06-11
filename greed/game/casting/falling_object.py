@@ -3,12 +3,11 @@ from game.casting.game_object import GameObject
 
 class FallingObject(GameObject):
     """
-    An item of cultural or historical interest. 
     
-    The responsibility of an Artifact is to provide a message about itself.
+    The responsibility of an FallingObject is to provide a dealer of the points of a GameObject
 
     Attributes:
-        _message (string): A short description about the artifact.
+        _points (int): current points of the object
     """
     def __init__(self):
         super().__init__()
