@@ -1,5 +1,5 @@
 import random
-from game.casting.power_ups import Power_up
+from game.casting.power_ups import PowerUp
 from game.casting.curses import Curses
 
 

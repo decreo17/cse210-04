@@ -1,5 +1,5 @@
 import random
-from game.casting.power_ups import Power_up
+from game.casting.power_ups import PowerUp
 from game.casting.curses import Curses
 from game.casting.randomizer import Randomizer
 
@@ -7,7 +7,7 @@ class Text_randomizer(Randomizer):
     
     def __init__(self):
         self._value = 0
-        self._power = Power_up()
+        self._power = PowerUp()
         self._curse = Curses()
         self._mystery = Randomizer()
         

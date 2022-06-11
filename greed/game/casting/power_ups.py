@@ -1,16 +1,14 @@
 import random
-class Power_up:
+class PowerUp:
     """
     Gives some extra incrrease to the points.
     """
     
-    # def __init__(self):
-    #      #self._speed = 0
+    def __init__(self):
+        self._factors = [.1, .3, .4, 2]
     
     def multiplier(self):
-        
-        self._factors = [.1, .3, .4, 2]
-        
+
         factor_access = random.randint(1,100)
         
         #print(self._factors [factor_access])

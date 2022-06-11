@@ -1,8 +1,8 @@
 import random
-from game.casting.power_ups import Power_up
+from game.casting.power_ups import PowerUp
 
 
-class Curses(Power_up):
+class Curses(PowerUp):
     """
     Decrease the points in some factor
     """

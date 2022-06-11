@@ -14,7 +14,7 @@ from game.shared.color import Color
 from game.shared.point import Point
 from game.shared.text_randomizer import Text_randomizer
 from game.casting.falling_object import FallingObject
-from game.casting.power_ups import Power_up
+from game.casting.power_ups import PowerUp
 
 
 FRAME_RATE = 12
@@ -43,7 +43,7 @@ checks = 0
 
 def main():
     
-    power_up = Power_up()
+    power_up = PowerUp()
     
     # create the collection
     collection = Collection()
