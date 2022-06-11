@@ -21,27 +21,27 @@ class Text_randomizer(Randomizer):
         #print('the name picker number issssssssssssssssssssssssss.', name_picker) # debugging line
         
         if name_picker == 1:
-            name = 'gem'
+            name = '*'
             self._value = 2
             return name 
         
         elif name_picker == 2:
-            name = 'ro'
+            name = 'O'
             self._value = -1
             return name 
             
         elif name_picker == 3:
-            name = 'mult'
+            name = 'm'
             self._value = self._power.multiplier()
             return name 
         
         elif name_picker == 4:
-            name = 'cur'
+            name = 'c'
             self._value = self._curse.bad_mult()
             return name 
         
         elif name_picker == 5:
-            name = 'ran'
+            name = 'r'
             self._value = self._mystery.mystery_box()
             return name 
         

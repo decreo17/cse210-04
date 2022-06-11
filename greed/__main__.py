@@ -16,7 +16,6 @@ from game.shared.text_randomizer import Text_randomizer
 from game.casting.falling_object import FallingObject
 from game.casting.power_ups import PowerUp
 
-
 FRAME_RATE = 12
 MAX_X = 900
 MAX_Y = 600
@@ -25,7 +24,6 @@ CELL_SIZE = 20
 FONT_SIZE = 20
 #below is a testing section
 banner_size = 107
-
 
 COLS = 60
 ROWS = 40
@@ -40,7 +38,6 @@ cur = 0
 rando = 0
 checks = 0
 
-
 def main():
     
     power_up = PowerUp()
@@ -52,7 +49,6 @@ def main():
     keyboard_service = KeyboardService(CELL_SIZE)
     video_service = VideoService(CAPTION, MAX_X, MAX_Y, CELL_SIZE, FRAME_RATE)
     director = Director(keyboard_service, video_service, collection,power_up)
-    
     
     # create the banner this is the score board
     banner = GameObject()
@@ -90,36 +86,34 @@ def main():
             checks += 1
             n = obj % 5
             if(n == 0):
-                text = "gem" #this is the gem
+                text = "*" #this is the gem
                 global ge 
                 ge += 1
                 #global checks
                 #checks += 1
                 
             elif(n == 1): #if (n !=0):  #this is the original
-                text = "ro" #this is the rock
+                text = "O" #this is the rock
                 global ro
                 ro += 1
                 #global checks
                 #checks += 1
                 
-                 
             #the remainder of this if statement is experiemenal
             elif(n == 2):
-                text = 'mult'
+                text = 'm'
                 global pu
                 pu += 1
                 #global checks
                 #checks += 1
                 
             elif(n == 3 ):
-                text = 'cur'
+                text = 'c'
                 global cur
                 cur += 1
-                
             
             else:
-                text = 'ran'
+                text = 'r'
                 global rando
                 rando += 1
             
@@ -148,7 +142,6 @@ def main():
             color = Color(r, g, b)
             point = Point
             
-            
             #falling objects that player will collect and avoid
             falling_object = FallingObject()
             falling_object.set_text(text)
@@ -156,37 +149,27 @@ def main():
             falling_object.set_color(color)
             falling_object.set_position(position)
             
-            
-
-            if (text == "ro"):
+            if (text == "O"):
                 falling_object.set_points(-1)
             
-            if (text =="gem"):
+            if (text =="*"):
                 falling_object.set_points(2)
                 
-            if (text == "mult"):
+            if (text == "m"):
                 base = 1 
                 falling_object.set_points(base)
                 print('you got a bonus')
                 
-            if text == 'cur':
+            if text == 'c':
                 negamult = 0
                 falling_object.set_points(negamult)
                 
-            if text == 'ran':
+            if text == 'r':
                 falling_object.set_points(1)
                 
                 
 
             collection.add_game_object("falling_objects", falling_object)
-            
-            
-                
-            
-                
-                
-    
-
 
     # # start the game
     # keyboard_service = KeyboardService(CELL_SIZE)
@@ -203,7 +186,5 @@ def main():
     print('the starting total number of falling objects', DEFAULT_FALLING_OBJECTS)
     print(f'the score ended at  {director._points: .0f}')
     
-
-
 if __name__ == "__main__":
     main()

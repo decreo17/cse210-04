@@ -5,9 +5,11 @@ class PowerUp:
     """
     
     def __init__(self):
-        self._factors = [.1, .3, .4, 2]
+        self._factors = []
     
     def multiplier(self):
+
+        self._factors = [.1, .3, .4, 2]
 
         factor_access = random.randint(1,100)
         
