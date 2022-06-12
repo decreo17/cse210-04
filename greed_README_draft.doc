@@ -1,0 +1,78 @@
+# decreo17/cse210-04
+Greed
+Can you resist temptation? Greed might seem easy but even the best may be decieved. The rules are simple. You, the player, use the left and right arrow keys to move your character to collect all the gems. Be careful not to catch the fool's gold though otherwise you'll lose points. Win and you'll be richer than your wildest dreams. Lose, and you will be cursed forever. Are you up for the challenge?
+
+Getting Started
+Make sure you have Python 3.8.0 or newer installed and running on your machine. Open a terminal and browse to the project's root folder. Start the program by running the following command.
+
+decreo17/cse210-04/greed/__main__.py
+You can also run the program from an IDE like Visual Studio Code. Start your IDE and open the project folder. Select the main.py file inside the cse210-04/greed folder and click the "run" icon.
+
+Project Structure
+The project files and folders are organized as follows:
+
+decreo17/cse210-04          (project root folder)
+
++ -- greed
+  + -- _pycache_
+    + -- _main_.cpython-310.pyc
+  + -- data 
+    + -- message.txt
+  + -- game
+    + -- casting
+      + -- _pycache_
+        + -- actor.cpython-310.pyc
+        + -- artifact.cpython-310.pyc
+        + -- cast.cpython-310.pyc
+        + -- collection.cpython-310.pyc
+        + -- falling_object.cpython-310.pyc
+        + -- game_object.cpython-310.pyc
+      + -- .DS_Store
+      + -- collection.py
+      + -- curses.py
+      + -- falling_object.py
+      + -- game_object.py
+      + -- power_ups.py
+      + -- randomizer.py
+    + -- directing
+      + -- .DS_Store
+      + director.py
+    + -- Services
+      + -- _pycache_
+        + -- keyboard_service.cpython-310.pyc
+        + -- video_service.cpython-310.pyc
+      + -- .DS_Store
+      + -- keyboard_service.py
+      + -- video_service.py
+    + -- Shared
+      + -- _pycache_
+        + -- color.cpython-310.pyc
+        + -- point.cpython-310.pyc
+      + -- .DS_Store
+      + -- color.py
+      + -- point.py
+      + -- text_randomizer.py
+    + -- 
+    + -- .DS_Store
+  + -- main.py
++ -- images
+  + 32px
+    + -- diamond.png
+    + -- gem(1).png
+    + -- gem(3).png  
+    + -- gem(4).png  
+    + -- gem(5).png  
+    + -- gem(6).png  
+    + -- gold-bars.png
++ -- .gitignore
++ -- Greed Document.docx
++ -- README.md
+
+Required Technologies
+Python 3.8.0
+
+Authors
+Nikkolet Ashby (ash22001@byui.edu)
+William Cameron (wecameron93@gmail.com)
+Ramón Felipe Castano Salgado (monchouam@gmail.com)
+Dhener Trinidad (tri20006@byui.edu)
